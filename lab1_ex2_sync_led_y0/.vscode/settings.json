@@ -1,0 +1,23 @@
+{
+  // Terminal mặc định: cmd.exe đã kích hoạt sẵn môi trường .venv của Zephyr
+  "terminal.integrated.profiles.windows": {
+    "Zephyr (cmd)": {
+      "path": "C:\\Windows\\System32\\cmd.exe",
+      "args": [
+        "/k",
+        "%USERPROFILE%\\zephyrproject\\.venv\\Scripts\\activate.bat"
+      ]
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "Zephyr (cmd)",
+
+  // IntelliSense đọc cờ biên dịch thật từ thư mục build
+  "C_Cpp.default.compileCommands": "${workspaceFolder}/build/compile_commands.json",
+
+  // Gắn kiểu file cho overlay / prj.conf
+  "files.associations": {
+    "*.overlay": "dts",
+    "prj.conf": "kconfig"
+  },
+  "terminal.integrated.stickyScroll.enabled": false
+}
