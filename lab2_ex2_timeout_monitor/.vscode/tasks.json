@@ -1,0 +1,34 @@
+{
+  // Các tác vụ build / nạp cho Zephyr (Terminal > Run Task...)
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Zephyr: Build",
+      "type": "process",
+      "command": "${env:USERPROFILE}\\zephyrproject\\.venv\\Scripts\\west.exe",
+      "args": ["build", "-p", "auto", "-b", "stm32f4_disco", "."],
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Zephyr: Pristine Build",
+      "type": "process",
+      "command": "${env:USERPROFILE}\\zephyrproject\\.venv\\Scripts\\west.exe",
+      "args": ["build", "-p", "always", "-b", "stm32f4_disco", "."],
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Zephyr: Flash",
+      "type": "process",
+      "command": "${env:USERPROFILE}\\zephyrproject\\.venv\\Scripts\\west.exe",
+      "args": ["flash"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Zephyr: Build + Flash",
+      "dependsOrder": "sequence",
+      "dependsOn": ["Zephyr: Build", "Zephyr: Flash"],
+      "problemMatcher": []
+    }
+  ]
+}
