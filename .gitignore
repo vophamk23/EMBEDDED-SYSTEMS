@@ -1,0 +1,22 @@
+# IDE files
+.vscode/
+**/.vscode/
+.vscode/**
+**/.vscode/**
+*.code-workspace
+
+# Build artifacts
+build/
+**/build/
+build/**
+**/build/**
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# OS generated
+Thumbs.db
+Desktop.ini
+.DS_Store
